@@ -1,0 +1,64 @@
+<!-- post-create.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Post</title>
+    <link rel="stylesheet" href="./styles/create.css">
+</head>
+<body>
+    
+    <div class="container">  
+        <form id="contact" action="/posts-create" method="POST">
+            <h1>Create Post</h1>
+            <fieldset>
+                <input placeholder="Enter Post ID" type="text" id="postId" name="userId" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Enter Title" type="text" id="title" name="title" tabindex="2" required autofocus>
+            </fieldset>
+            <fieldset>
+                <input placeholder="Enter Message" type="text" id="message" name="body" tabindex="3" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Update</button>
+            </fieldset>
+        </form>
+    </div>
+
+<div class="dis">
+    <% if (post) { %>
+        <div class="post-details">
+
+
+            <div class="ag-format-container">
+                <div class="ag-courses_box">
+
+                  <div class="ag-courses_item">
+                    <a href="#" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg"></div>
+              
+                      <div class="ag-courses-item_title">
+                        <h2>Post Details</h2>
+                      </div>
+              
+                      <div class="ag-courses-item_date-box">
+                        
+                        <span class="ag-courses-item_date">
+                            <p><strong>ID:</strong><%= post.id %></p>
+                        <p><strong>Title:</strong><%= post.title %></p>
+                            <p><strong>Body:</strong> <%= post.body %></p>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+              
+                </div>
+              </div>
+        </div>
+    <% } %>
+</div>
+</body>
+</html>

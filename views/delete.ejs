@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Post</title>
+    <link rel="stylesheet" href="./styles/delete.css">
+</head>
+
+<body>
+    <div class="container">  
+        <form id="contact" action="/posts-delete" method="POST">
+            <h3>Delete Post</h3>
+           
+            <fieldset>
+                <input placeholder="Enter Post ID" type="text" id="id" name="id" tabindex="1" required autofocus>
+            </fieldset>
+         
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Delete</button>
+            </fieldset>
+        </form>
+    </div>
+<div class="dis">
+    <% if (deletedPostId) { %>
+        <div class="post-details">
+
+            <div class="ag-format-container">
+                <div class="ag-courses_box">
+
+                  <div class="ag-courses_item">
+                    <a href="#" class="ag-courses-item_link">
+                      <div class="ag-courses-item_bg"></div>
+              
+                      <div class="ag-courses-item_title">
+                        <h2>Post Details</h2>
+                      </div>
+              
+                      <div class="ag-courses-item_date-box">
+                      
+                        <span class="ag-courses-item_date"> 
+                            <p>The post with ID <%= deletedPostId %> has been successfully deleted.</p>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+              
+                </div>
+              </div>
+           
+        </div>
+    <% } %>
+</div>
+</body>
+</html>

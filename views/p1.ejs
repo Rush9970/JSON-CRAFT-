@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./styles/p1.css" />
+</head>
+<body>
+  <div class="top">
+    <div class="heading">Post</div>
+  </div>
+
+  <div class="btns">
+    <button onclick="redirectToPost()">View</button>
+    <button onclick="redirectToUpdate()">Update</button>
+    <button onclick=" redirectTodelete()">Delete</button>
+    <button onclick=" redirectTo()">Comments</button>
+    <button  onclick=" redirectTopatch()">Patch</button>
+    <button onclick=" redirectTocreate()">Create</button>
+  </div>
+
+  <script>
+    function redirectToPost() {
+      window.location.href = "/posts";
+    }
+
+    function redirectToUpdate() {
+      window.location.href = "/posts-update";
+    }
+    function redirectTodelete() {
+      window.location.href = "/posts-delete";
+      
+    }
+    function redirectTo() {
+      window.location.href = "/comments";
+    }
+    function redirectTopatch() {
+      window.location.href = "/posts-patch";
+    }
+   
+    function  redirectTocreate() {
+      window.location.href = "/posts-create";
+    }
+  </script>
+</body>
+</html>

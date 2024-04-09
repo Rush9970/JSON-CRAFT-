@@ -1,0 +1,361 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+/* Reset styles */
+* {
+  margin: 0;
+  padding: 5px;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 12px;
+  line-height: 30px;
+  color: #fff; /* Changed color to white */
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4945B6 0%, #6A6DD9 53%, #A695FB 100%);
+  position: relative;
+  background-size: 400% 400%; /* Stretching out the background gradient */
+  animation: gradientAnimation 15s infinite alternate; /* Adding animation for continuous movement */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+
+/* Background grid */
+body::before {
+  --line: hsl(0 0% 95% / 0.15);
+  --size: 60px;
+  content: "";
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  background: linear-gradient(90deg, var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size), linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% / var(--size) var(--size);
+  -webkit-mask: linear-gradient(-15deg, transparent 30%, white);
+  mask: linear-gradient(-15deg, transparent 30%, white);
+  top: 0;
+  z-index: -1;
+  transform: translate3d(0, 0, -100vmin);
+}
+
+/* Container styles */
+.container {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Contact form styles */
+#contact {
+  background: #F9F9F9;
+    padding: 25px;
+    margin: 60px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+
+}
+
+#contact h3 {
+  display: block;
+  font-size: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+fieldset {
+  border: medium none !important;
+  margin: 0 0 10px;
+  min-width: 100%;
+  padding: 0;
+  width: 100%;
+}
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact input[type="tel"],
+#contact input[type="url"],
+#contact textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  background: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+}
+
+#contact input[type="text"]:hover,
+#contact input[type="email"]:hover,
+#contact input[type="tel"]:hover,
+#contact input[type="url"]:hover,
+#contact textarea:hover {
+  -webkit-transition: border-color 0.3s ease-in-out;
+  -moz-transition: border-color 0.3s ease-in-out;
+  transition: border-color 0.3s ease-in-out;
+  border: 1px solid #aaa;
+}
+
+#contact textarea {
+  height: 100px;
+  max-width: 100%;
+  resize: none;
+}
+h3{
+  color: #000000;
+}
+#contact button[type="submit"] {
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  background: #7574df;
+  color: #FFF;
+  margin: 0 0 5px;
+  padding: 10px;
+  font-size: 15px;
+}
+#contact button[type="submit"]:hover {
+  background: #43A047;
+  -webkit-transition: background 0.3s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+#contact button[type="submit"]:active {
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+h1{
+  color: #000000;
+}
+#contact input:focus,
+#contact textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+
+::-webkit-input-placeholder {
+  color: #888;
+}
+
+:-moz-placeholder {
+  color: #888;
+}
+
+::-moz-placeholder {
+  color: #888;
+}
+
+:-ms-input-placeholder {
+  color: #888;
+}
+
+/* Card styles */
+section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 100vh;
+}
+
+.card {
+  color: white;
+  padding: 24px;
+  border: 1px solid #ffffff1f;
+  border-radius: 18px;
+  background: linear-gradient(193deg, #6a6dd982 53%, #a695fb78 100%);
+  box-shadow: inset 0 0 6px hsla(0,0%,100%,0.2);
+  position: relative;
+  max-width: 300px;
+  transition: all 1.7s ease;
+  margin: 28px auto;
+}
+
+.card:hover {
+  box-shadow: inset 0 0 6px hsla(0,0%,100%,0.4);
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(45deg, #ffffff00, #ffffff 50%, #ffffff00);
+  top: -1px;
+  right: 20px;
+  transition: all 1.4s ease;
+}
+
+.card:hover::before {
+  right: calc(50% - 20px);
+}
+
+.card::after {
+  color: white;
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(45deg, #ffffff00, #ffffff87 50%, #ffffff00);
+  bottom: -1px;
+  left: 20px;
+  transition: all 1.4s ease;
+}
+
+.card:hover::after {
+  left: calc(50% - 20px);
+}
+.dis{
+  width:100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  
+}
+
+.ag-format-container {
+  
+  width: 1142px;
+  margin: 0 auto;
+  text-decoration: none;
+} 
+
+
+
+.ag-courses_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  text-decoration: none;
+  padding: 0px 0;
+}
+.ag-courses_item {
+  -ms-flex-preferred-size: calc(33.33333% - 30px);
+  flex-basis: calc(33.33333% - 30px);
+
+  margin: 0 15px 30px;
+
+  overflow: hidden;
+  text-decoration: none;
+  border-radius: 28px;
+}
+.ag-courses-item_link {
+  display: block;
+  padding: 30px 20px;
+  background-color: #121212;
+
+  overflow: hidden;
+  text-decoration: none;
+  position: relative;
+}
+.ag-courses-item_link:hover,
+.ag-courses-item_link:hover .ag-courses-item_date {
+  text-decoration: none;
+  color: #FFF;
+}
+.ag-courses-item_link:hover .ag-courses-item_bg {
+  -webkit-transform: scale(10);
+  -ms-transform: scale(10);
+  transform: scale(10);
+  text-decoration: none;
+}
+.ag-courses-item_title {
+  min-height: 87px;
+  margin: 10px 0 0px;
+  text-decoration: none;
+  overflow: hidden;
+  font-weight: bold;
+  font-size: 30px;
+  color: #FFF;
+  text-decoration: none;
+  z-index: 2;
+  position: relative;
+  padding-top: 2px;
+}
+.ag-courses-item_date-box {
+  font-size: 18px;
+  color: #FFF;
+  text-decoration: none;
+  z-index: 2;
+  position: relative;
+}
+.ag-courses-item_date {
+  font-weight: bold;
+  color: #f9b234;
+
+  -webkit-transition: color .5s ease;
+  -o-transition: color .5s ease;
+  transition: color .5s ease
+}
+.ag-courses-item_bg {
+  height: 128px;
+  width: 128px;
+  background-color: #000000;
+
+  z-index: 1;
+  position: absolute;
+  top: -75px;
+  right: -75px;
+
+  border-radius: 50%;
+
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+
+
+
+@media only screen and (max-width: 979px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: calc(50% - 30px);
+    flex-basis: calc(50% - 30px);
+  }
+  .ag-courses-item_title {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .ag-format-container {
+    width: 96%;
+  }
+
+}
+@media only screen and (max-width: 639px) {
+  .ag-courses_item {
+    -ms-flex-preferred-size: 100%;
+    flex-basis: 100%;
+  }
+  .ag-courses-item_title {
+    min-height: 72px;
+    line-height: 1;
+
+    font-size: 24px;
+  }
+  .ag-courses-item_link {
+    padding: 22px 40px;
+  }
+  .ag-courses-item_date-box {
+    font-size: 16px;
+  }
+}

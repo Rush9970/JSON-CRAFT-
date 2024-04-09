@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Todos</title>
+    <link rel="stylesheet" href="./styles/comments.css">
+</head>
+<body>
+    <div class="container">  
+        <form id="contact" action="/todos" method="POST">
+            <h3>View User Todos</h3>
+            <fieldset>
+                <label for="userId">Enter User ID:</label>
+                <input placeholder="Enter User ID" type="text" id="userId" name="userId" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Get Todos</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="dis">
+        <% if (todos) { %>
+            <div class="post-details">
+                <div class="ag-format-container">
+                    <div class="ag-courses_box">
+                        <% todos.forEach((todo, index) => { %>
+                            <div class="todo-item">
+                                <div class="ag-courses_item">
+                                    <a href="#" class="ag-courses-item_link">
+                                        <div class="ag-courses-item_bg"></div>
+                                        <div class="ag-courses-item_title">
+                                            <h2 style="font-size: 25px;">Todo Details <%= index + 1 %></h2> <!-- Inline CSS for large size -->
+                                        </div>
+                                        <div class="ag-courses-item_date-box">
+                                            <span class="ag-courses-item_date"> 
+                                                <p><strong>Title:</strong> <%= todo.title %></p>
+                                                <p><strong>Completed:</strong> <%= todo.completed ? 'Yes' : 'No' %></p>
+                                            </span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

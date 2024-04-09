@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON Craft</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <style>
+    /* Additional CSS for footer */
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: #000;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Media query for smaller screens */
+    @media only screen and (max-width: 600px) {
+      p span {
+        font-size: 40px; /* Adjusting font size for smaller screens */
+      }
+    }
+  </style>
+</head>
+<body>
+  <p>
+    <span>
+      JSON Craft
+    </span>
+  </p>
+  <div>
+    <button id="postButton">Post</button>
+    <button onclick="redirectToAlbum()">Album</button>
+    <button onclick="redirectToUser()">User</button> <!-- Add onclick attribute -->
+  </div>
+
+  <script>
+    // Function to redirect to album page
+    function redirectToAlbum() {
+      // Redirect to the /album route
+      window.location.href = '/album';
+    }
+
+    // Function to redirect to user page
+    function redirectToUser() {
+      // Redirect to the /user route
+      window.location.href = '/p2';
+    }
+
+    // Get the button element
+    const postButton = document.getElementById('postButton');
+
+    // Add click event listener
+    postButton.addEventListener('click', () => {
+      // Redirect to the /p1 route
+      window.location.href = '/p1';
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    &copy; <span id="year"></span> Developed by Web Wizards
+  </footer>
+
+  <!-- Script to update year in footer -->
+  <script>
+    const yearSpan = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearSpan.textContent = currentYear;
+  </script>
+</body>
+</html>

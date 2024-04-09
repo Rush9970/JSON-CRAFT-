@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Albums</title>
+    <!-- You can link your CSS file here -->
+    <link rel="stylesheet" href="./styles/comments.css">
+</head>
+<body>
+    <div class="container">  
+        <form id="contact" action="/user" method="POST">
+            <h3>View User Albums</h3>
+            <fieldset>
+                <label for="userId">Enter User ID:</label>
+                <input placeholder="Enter User ID" type="text" id="userId" name="userId" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Get Albums</button>
+            </fieldset>
+        </form>
+    </div>
+    <div class="dis">
+        <% if (albums) { %>
+            <div class="post-details">
+                <div class="ag-format-container">
+                    <div class="ag-courses_box">
+                        <% albums.forEach((album, index) => { %>
+                            <div class="ag-courses_item">
+                                <a href="#" class="ag-courses-item_link">
+                                    <div class="ag-courses-item_bg"></div>
+                                    <div class="ag-courses-item_title">
+                                        <h2 style="font-size: 25px;">Album Details <%= index + 1 %></h2> <!-- Inline CSS for large size -->
+                                    </div>
+                                    <div class="ag-courses-item_date-box">
+                                        <span class="ag-courses-item_date"> 
+                                            <div class="album-item">
+                                                <p><strong>ID:</strong> <%= album.id %></p>
+                                                <p><strong>Title:</strong> <%= album.title %></p>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </a>
+                            </div>
+                        <% }); %>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Photos</title>
+    <link rel="stylesheet" href="./styles/album.css">
+</head>
+<body>
+    <div class="container">  
+        <form id="contact" action="/album" method="POST">
+            <h1 class="hi">View Album Photos</h1>
+            <fieldset>
+                <input placeholder="Enter Album ID" type="text" id="albumId" name="albumId" tabindex="1" required autofocus>
+            </fieldset>
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Fetch</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="dis">
+        <% if (album && photos) { %>
+            <div class="post-details">
+                <div class="ag-format-container">
+                    <div class="ag-courses_box">
+                        <div class="ag-courses_item">
+                            <a href="#" class="ag-courses-item_link">
+                                <div class="ag-courses-item_bg"></div>
+                                <div class="ag-courses-item_title">
+                                    <h2>Album Details:</h2>
+                                </div>
+                                <div class="ag-courses-item_date-box">
+                                    <h1><strong>Title:</strong> <%= album.title %></h1>
+                                    <p><strong>Album ID:</strong> <%= album.id %></p>
+                                </div>
+                                <div class="ag-courses-item_date-box">
+                                    <% photos.forEach((photo, index) => { %>
+                                        <h3><strong>Photo <%= index + 1 %>:</strong> <%= photo.title %></h3>
+                                        <img src="<%= photo.url %>" alt="<%= photo.title %>">
+                                    <% }); %>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

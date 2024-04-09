@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="./styles/comments.css">
+</head>
+
+<body>
+    <div class="container">  
+        <form id="contact" action="/comments" method="POST">
+            <h3>View Post</h3>
+           
+            <fieldset>
+                <input placeholder="Enter Post ID" type="text" id="postId" name="postId" tabindex="1" required autofocus>
+            </fieldset>
+         
+            <fieldset>
+                <button type="submit" id="contact-submit" data-submit="...Sending">Fetch</button>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="dis">
+        <% if (comments) { %>
+            <div class="post-details">
+                <div class="ag-format-container">
+                    <div class="ag-courses_box">
+                        <div class="ag-courses_item">
+                            <a href="#" class="ag-courses-item_link">
+                                <div class="ag-courses-item_bg"></div>
+                                <div class="ag-courses-item_title">
+                                    <h2>Post Details</h2>
+                                </div>
+                                
+                                <% comments.forEach((comment, index) => { %>
+                                    <div class="ag-courses-item_date-box">
+                                        <h1><strong> <%= index + 1 %> . Name:</strong> <%= comment.name %></h1>
+                                        <span class="ag-courses-item_date"> 
+                                            <p><strong>Email:</strong> <%= comment.email %></p>
+                                            <p><strong>Message:</strong> <%= comment.body %></p>
+                                        </span>
+                                    </div>
+                                <% }); %>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>

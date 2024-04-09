@@ -1,0 +1,122 @@
+body { font: 400 1em/1.5 "Neuton"; background: #090d00; color: rgba(255,255,255,.25); text-align: center; margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+p {
+	text-transform: uppercase;
+	letter-spacing: .5em;
+	/* display: inline-block; */
+	
+	padding: 1.5em 0em;
+	
+	margin-top: 10%;
+	
+	
+  
+  
+  span {
+    
+  	font: 800 7em / 1 "Oswald", sans-serif;
+  	letter-spacing: 0;
+  	padding: .25em 0 .325em;
+	  
+	  margin: 0 auto;
+  	text-shadow: 0 0 80px rgba(255,255,255,.5);
+
+/* Clip Background Image */
+
+	  background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+	  -webkit-background-clip: text;
+	  background-clip: text;
+
+/* Animate Background Image */
+
+	  -webkit-text-fill-color: transparent;
+	  -webkit-animation: aitf 80s linear infinite;
+
+/* Activate hardware acceleration for smoother animations */
+
+	  -webkit-transform: translate3d(0,0,0);
+	  -webkit-backface-visibility: hidden;
+
+  }
+}
+
+/* Animate Background Image */
+
+@-webkit-keyframes aitf {
+	0% { background-position: 0% 50%; }
+	100% { background-position: 100% 50%; }
+}
+
+button{
+  position: relative;
+  height: 65px;
+  width: 210px;
+  margin: 0 40px;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #0d0d0d;
+  overflow: hidden;
+  transition: 0.6s;
+  margin-top: 15%;
+}
+button:first-child{
+  color: #206592;
+  border-color: #206592;
+}
+button:last-child{
+  color: #ce5c0c;
+  border-color: #ce5c0c;
+}
+button{
+  color: #0cce1f;
+  border-color: #0cce12;
+}
+button:before, button:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+button:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+button:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+button:hover:before,
+button:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+button:hover{
+  color: #f2f2f2;
+}
+button:hover:first-child{
+  background: #206592;
+}
+button:hover:last-child{
+  background: #ce5c0c;
+}
+button:hover{
+  background: #19ce0c;
+}
