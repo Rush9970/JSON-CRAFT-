@@ -20,11 +20,19 @@ JSON Craft is a full-stack web application built to handle JSONPlaceholder API e
 ## Installation
 
 To run this project locally, follow these steps:
-
 1. Clone the repository:
 
    ```bash
    git clone https://github.com/yourusername/json-craft.git
-cd json-craft
-npm install
-npm start
+   cd json-craft
+   npm install
+   nodemon index.js
+
+HOME PAGE:
+![Alternative Text](image1.png)
+
+POST PAGE :
+(image2.png)
+
+USER ALBUMS PAGE :
+(image3.png)
