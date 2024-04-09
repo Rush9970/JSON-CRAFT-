@@ -29,10 +29,10 @@ To run this project locally, follow these steps:
    nodemon index.js
 
 HOME PAGE:
-!(image1.png)
+![Alternative Text](image1.png)
 
 POST PAGE :
-!(image2.png)
+![Alternative Text](image2.png)
 
 USER ALBUMS PAGE :
-!(image3.png)
+![Alternative Text](image3.png)
