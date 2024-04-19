@@ -23,7 +23,7 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/json-craft.git
+   https://github.com/Rush9970/JSON-CRAFT-.git
    cd json-craft
    npm install
    nodemon index.js
